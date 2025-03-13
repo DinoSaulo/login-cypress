@@ -1,5 +1,5 @@
 // ***********************************************************
-// This example support/e2e.ts is processed and
+// This example support/index.js is processed and
 // loaded automatically before your test files.
 //
 // This is a great place to put global configuration and
@@ -14,18 +14,6 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-
-Cypress.on('uncaught:exception', (err, runnable) => {
-    // You can check the error message and handle specific cases if needed
-    if (err.message.includes('c(...).setup is not a function')) {
-      // Return false to prevent Cypress from failing the test
-      return false;
-    }
-    
-    // Let Cypress fail for other errors
-    return true;
-  });
+import "cypress-cucumber-attach-screenshots-to-failed-steps";
 
 // Alternatively you can use CommonJS syntax:
-// require('./commands')
