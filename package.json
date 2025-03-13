@@ -1,0 +1,25 @@
+{
+  "name": "login-cypress",
+  "version": "1.0.0",
+  "description": "Projeto para automatizar testes de login com cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DinoSaulo/login-cypress.git"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "dinosaulo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DinoSaulo/login-cypress/issues"
+  },
+  "homepage": "https://github.com/DinoSaulo/login-cypress#readme",
+  "dependencies": {
+    "cypress": "^14.2.0"
+  }
+}
