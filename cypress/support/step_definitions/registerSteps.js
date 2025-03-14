@@ -31,12 +31,3 @@ Then("o usuário recebe uma mensagem de erro informando que as senhas não coinc
 Then("o usuário deve ser redirecionado para a página de confirmação de registro", function () {
     registerPage.validateRedirectionAfterRegister();
 });
-
-Then("o usuário deve ver uma mensagem de sucesso informando que o registro foi concluído", function () {
-    
-});
-
-
-
-
-

@@ -24,5 +24,6 @@ Feature: Registro de novo usuário
         And o usuário preenche o campo Confirmação de Senha com a mesma senha válida
         When o usuário submete o formulário de registro
         Then o usuário deve ser redirecionado para a página de confirmação de registro
-        And o usuário deve ver uma mensagem de sucesso informando que o registro foi concluído
+
+    
 
