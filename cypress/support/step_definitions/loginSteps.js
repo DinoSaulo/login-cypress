@@ -24,3 +24,7 @@ Then("o usuário deve ver uma mensagem de erro informando que o campo é obrigat
 
     registerPage.assertValidationMessageOnInput(inputvalidado);
 })
+
+When("o usuário clica no botão de login", function () {
+    registerPage.clickOnRegisterButton();
+});

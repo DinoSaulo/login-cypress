@@ -25,5 +25,13 @@ Feature: Registro de novo usuário
         When o usuário submete o formulário de registro
         Then o usuário deve ser redirecionado para a página de confirmação de registro
 
-    
+    Scenario: Login com o novo usuário registrado
+        Given que o usuário acessa a página de registro
+        And o usuário cria um novo registro com email e senha validos
+        And o usuário é redirecionado para a pagina de login
+        When o usuário preenche o campo de email e senha com o email e senha cadastrados
+        And o usuário clica no botão de login
+        Then o usuário é redirecionado para a página de dashboard
+        And o usuário recebe uma mensagem de boas-vindas
+
 

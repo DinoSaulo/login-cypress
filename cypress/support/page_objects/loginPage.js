@@ -12,6 +12,19 @@ class LoginPage {
 
         cy.url().should('include', '/register'); // Verifica se houve o redirecionamento
     }
+
+    fillEmailInput(email){
+        cy.get(loginElements.inputEmail()).type(email);
+    }
+
+    fillPasswordInput(email){
+        cy.get(loginElements.inputPassword()).type(email);
+    }
+
+    clickOnLoginButton(){
+        cy.get(loginElements.btnSubmitLogin()).click();
+    }
+
 }
 
 export default LoginPage

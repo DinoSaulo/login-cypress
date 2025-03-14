@@ -1,4 +1,5 @@
 {
   "alertFillInput": "Please fill in this field.",
-  "differentPassword": "As senhas não coincidem. Tente novamente."
+  "differentPassword": "As senhas não coincidem. Tente novamente.",
+  "logginMessage": "Bem-vindo ao Dashboard"
 }
