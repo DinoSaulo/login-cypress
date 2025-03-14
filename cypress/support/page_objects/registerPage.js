@@ -4,6 +4,7 @@ const registerElements = new RegisterElements();
 
 class RegisterPage {
     clickOnRegisterButton(){
+        cy.intercept('POST', '/register').as('registerRequest');
         cy.get(registerElements.btnSubmitRegister()).click(); // Clica no botão de registro
     }
 
@@ -47,6 +48,12 @@ class RegisterPage {
                 .invoke('text')
                 .should('equal', messagesFixture.differentPassword);
         });
+    };
+
+    validateRedirectionAfterRegister() {
+        cy.url().should('include', '/login');
+        
+        cy.wait('@registerRequest').its('response.statusCode').should('eq', 302); // Aguarda a resposta 302
     }
 }
 
