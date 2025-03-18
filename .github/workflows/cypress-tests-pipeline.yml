@@ -31,13 +31,11 @@ jobs:
           echo "Aguardando aplicação..."
           sleep 40
 
-      - name: Fazendo checkout
+      - name: Clonando o repositório
         uses: actions/checkout@v4
 
       - name: Executando testes Cypress
         uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
 
       - name: Salvar vídeos e screenshots caso os testes tenham falhado
         if: failure()

@@ -4,6 +4,8 @@
 
 Automação dos testes de front-end do projeto [desafioAnalistaTestes](https://github.com/rhDuxus/desafioAnalistaTestes) utilizando Cypress, Node.js, Javascript e Github Actions.
 
+O desenvolvimento desse projeto foi documentado no Board [desafio Tecnico - Élin Duxus](https://trello.com/b/Vs4xpLfV/desafio-tecnico-elin-duxus).
+
 ##
 
 <!--- Utilizando o exemplos do repositório https://github.com/iuricode/readme-template para esse README.md --->
@@ -129,14 +131,13 @@ Após isso a execução dos testes será iniciada como mostrada no vídeo abaixo
 
 ![switch_de_testes](/cypress/videos/testLogin.feature.gif "Switch de testes")
 
-<!---
 #### Via Github Actions
 
 A cada commit feito neste repositório os testes são executados automaricamente pelo Github Actions
 
 Atualmente o status ds testes é:
-![tests workflow](https://github.com/DinoSaulo/Accenture_desafio_tecnico_2/actions/workflows/ci.yml/badge.svg)
--->
+![cypress-tests-pipeline](https://github.com/DinoSaulo/login-cypress/actions/workflows/cypress-tests-pipeline.yml/badge.svg)
+
 ## 💻 Testes
 
 Atualmente esse projeto possui 5 testes, todos eles estão no arquvo [testLogin.feature](./cypress/e2e/Tests/testLogin.feature):
