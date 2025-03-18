@@ -1,0 +1,45 @@
+name: Execução dos testes do projeto no Github Actions
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cypress-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonando o repositório do projeto
+        uses: actions/checkout@v4
+        with:
+          repository: rhDuxus/desafioAnalistaTestes
+
+      - name: inicializando o Docker Compose do projeto
+        run: docker-compose up --build -d
+
+      - name: Aguardando a aplicação iniciar
+        run: |
+          echo "Aguardando aplicação..."
+          sleep 40
+
+      - name: Instalando dependências do Cypress
+        run: npm install
+
+      - name: Executando testes Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          headless: true
+
+      - name: Salvar vídeos e screenshots caso os testes tenham falhado
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-artifacts
+          path: |
+            cypress/screenshots
+            cypress/videos
