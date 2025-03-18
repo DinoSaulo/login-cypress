@@ -37,7 +37,7 @@ jobs:
 
       - name: Salvar vídeos e screenshots caso os testes tenham falhado
         if: failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-artifacts
           path: |
