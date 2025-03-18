@@ -18,7 +18,12 @@ jobs:
         with:
           repository: rhDuxus/desafioAnalistaTestes
 
-      - name: inicializando o Docker Compose do projeto
+      - name: Instalar Docker Compose
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y docker-compose
+  
+      - name: Construir e subir os containers
         run: docker-compose up --build -d
 
       - name: Aguardando a aplicação iniciar
