@@ -15,15 +15,22 @@ Given("o usuário preenche o campo E-mail com um e-mail válido", () => {
 });
 
 Given("o usuário preenche o campo Senha com uma senha válida", () => {
-    registerPage.fillPasswordInput("senha@123");
+    cy.fixture('userCredentials.json').then((userCredentials) => {
+        registerPage.fillPasswordInput(userCredentials.generalPassword);
+    });
+    
 });
 
 Given("o usuário preenche o campo Confirmação de Senha uma senha válida diferente", () => {
-    registerPage.fillConfirmPasswordInput("senha@1235");
+    cy.fixture('userCredentials.json').then((userCredentials) => {
+        registerPage.fillConfirmPasswordInput(userCredentials.generalWrongPassword);
+    });
 });
 
 Given("o usuário preenche o campo Confirmação de Senha com a mesma senha válida", () => {
-    registerPage.fillConfirmPasswordInput("senha@123");
+    cy.fixture('userCredentials.json').then((userCredentials) => {
+        registerPage.fillConfirmPasswordInput(userCredentials.generalPassword);
+    });
 });
 
 When("o usuário submete o formulário de registro", () => {
