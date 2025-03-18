@@ -45,7 +45,7 @@ git clone https://github.com/DinoSaulo/login-cypress.git
 Após alguns segundos execute os seguintes comandos:
 
 ```bash
-cd Accenture_desafio_tecnico_2
+cd login-cypress
 npm install
 ```
 
