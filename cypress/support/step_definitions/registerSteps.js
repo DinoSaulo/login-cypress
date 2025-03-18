@@ -18,7 +18,6 @@ Given("o usuário preenche o campo Senha com uma senha válida", () => {
     cy.fixture('userCredentials.json').then((userCredentials) => {
         registerPage.fillPasswordInput(userCredentials.generalPassword);
     });
-    
 });
 
 Given("o usuário preenche o campo Confirmação de Senha uma senha válida diferente", () => {

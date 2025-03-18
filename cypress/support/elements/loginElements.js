@@ -4,5 +4,5 @@ class LoginElements {
     btnSubmitLogin = () => { return "button[type='submit']" };
     btnRegister = () => { return "a[href='/register']" };
 }
-  
+
 export default LoginElements;

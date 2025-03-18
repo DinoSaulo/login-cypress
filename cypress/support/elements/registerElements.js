@@ -6,5 +6,5 @@ class RegisterElements {
     btnBackToLogin = () => { return "a[href='/login']" };
     alertMessage = () => { return "body div p" };
 }
-  
+
 export default RegisterElements;

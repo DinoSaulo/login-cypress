@@ -5,7 +5,6 @@ const dashboardElements = new DashboardElements();
 class DashboardPage {
     validateRedirectedPage() {
         cy.url().should('include', '/dashboard'); // Verifica se houve o redirecionamento
-
     }
 
     validateLoginMessage(){

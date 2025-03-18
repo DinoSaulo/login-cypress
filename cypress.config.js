@@ -18,9 +18,7 @@ module.exports = defineConfig({
   viewportHeight: 1080,
 
   e2e: {
-    env: {
-        
-    },
+    env: {},
     specPattern: "**/**/*.feature",
     supportFile: 'cypress/support/index.js',
     fixture:'cypress/fixtures/*.json',
