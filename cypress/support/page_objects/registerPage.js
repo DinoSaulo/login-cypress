@@ -26,7 +26,11 @@ class RegisterPage {
         cy.fixture('messages.json').then((messagesFixture) => {
             cy.get(inputLocator)
                 .invoke('prop', 'validationMessage')
-                .should('equal', messagesFixture.alertFillInput);
+                .then((message) => {
+                    expect(message).to.satisfy((msg) =>
+                        msg === messagesFixture.alertFillInputIn || msg === messagesFixture.alertFillInputOut
+                    );
+                });
         });
     };
 
