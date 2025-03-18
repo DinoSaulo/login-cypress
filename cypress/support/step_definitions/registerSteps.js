@@ -8,7 +8,7 @@ const loginPage = new LoginPage();
 
 const registerGenerator = new RegisterGenerator();
 
-const register = registerGenerator.generateRegister()
+let register = registerGenerator.generateRegister()
 
 Given("o usuário preenche o campo E-mail com um e-mail válido", () => {
     registerPage.fillEmailInput(registerGenerator.generateRegister().email);
@@ -52,4 +52,29 @@ Given("o usuário é redirecionado para a pagina de login", () => {
 When("o usuário preenche o campo de email e senha com o email e senha cadastrados", () => {
     loginPage.fillEmailInput(register.email);
     loginPage.fillPasswordInput(register.password);
+});
+
+Given("que usuário já está registrado", () => {
+    register = registerGenerator.generateRegister();
+
+    cy.visit('http://localhost:8080/register');
+    registerPage.fillEmailInput(register.email);
+    registerPage.fillPasswordInput(register.password);
+    registerPage.fillConfirmPasswordInput(register.password);
+    registerPage.clickOnRegisterButton();
+});
+
+Given("o usuário acessa a página de registro", () => {
+    cy.visit('http://localhost:8080/register');
+});
+
+When("o usuário tenta se registrar com o e-mail já utilizado no cadastro", () => {
+    registerPage.fillEmailInput(register.email);
+    registerPage.fillPasswordInput(register.password);
+    registerPage.fillConfirmPasswordInput(register.password);
+    registerPage.clickOnRegisterButton();
+});
+
+When("o usuário deve ver uma mensagem de erro informando que o e-mail já está em uso", () => {
+    registerPage.validEmailAlreadInUseMessage();
 });

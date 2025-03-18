@@ -1,5 +1,6 @@
 {
   "alertFillInput": "Please fill in this field.",
   "differentPassword": "As senhas não coincidem. Tente novamente.",
-  "logginMessage": "Bem-vindo ao Dashboard"
+  "logginMessage": "Bem-vindo ao Dashboard",
+  "emailAlreadyInUse": "Este e-mail já está registrado."
 }

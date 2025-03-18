@@ -34,4 +34,8 @@ Feature: Registro de novo usuário
         Then o usuário é redirecionado para a página de dashboard
         And o usuário recebe uma mensagem de boas-vindas
 
-
+    Scenario: Validação de e-mail já registrado
+        Given que usuário já está registrado
+        And o usuário acessa a página de registro
+        When o usuário tenta se registrar com o e-mail já utilizado no cadastro
+        Then o usuário deve ver uma mensagem de erro informando que o e-mail já está em uso

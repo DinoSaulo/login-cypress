@@ -50,9 +50,17 @@ class RegisterPage {
         });
     };
 
+    validEmailAlreadInUseMessage(){
+        cy.fixture('messages.json').then((messagesFixture) => {
+            cy.get(registerElements.alertMessage())
+                .invoke('text')
+                .should('equal', messagesFixture.emailAlreadyInUse);
+        });
+    };
+
     validateRedirectionAfterRegister() {
         cy.url().should('include', '/login');
-        
+
         cy.wait('@registerRequest').its('response.statusCode').should('eq', 302); // Aguarda a resposta 302
     }
 }
