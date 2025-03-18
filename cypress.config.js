@@ -31,6 +31,13 @@ module.exports = defineConfig({
     "pageLoadTimeout": 120000,
     "defaultCommandTimeout": 60000,
     "requestTimeout": 30000,
+    "reporter": "mochawesome",
+    "reporterOptions": {
+        reportDir: "cypress/reports",
+        overwrite: true,
+        html: true,
+        json: true,
+    },
     setupNodeEvents,
   },
 });
